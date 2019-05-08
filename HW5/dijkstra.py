@@ -12,7 +12,7 @@ def dijkstra(graph, start=1):
     M = MikesGraphHeap()  # stores nodes in form node = (label, key)
     # Dijkstra greedy score for nodes with edge from 1 is the values of the edges
 
-    heapFill = V - X - set(graph[1].keys())  # all of the nodes that 1 doesnt have an edge to, to have key of inf in M
+    heapFill = V - X - set(graph[start].keys())  # all of the nodes that 1 doesnt have an edge to, to have key of inf in M
     M.heapify([(x, 10**6) for x in heapFill])
     for node in graph[start]:
         M.insert((node, graph[start][node]))
