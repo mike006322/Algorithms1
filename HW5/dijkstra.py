@@ -14,8 +14,8 @@ def dijkstra(graph, start=1):
 
     heapFill = V - X - set(graph[1].keys())  # all of the nodes that 1 doesnt have an edge to, to have key of inf in M
     M.heapify([(x, 10**6) for x in heapFill])
-    for node in graph[1]:
-        M.insert((node, graph[1][node]))
+    for node in graph[start]:
+        M.insert((node, graph[start][node]))
 
     while X != V:
         # find minimum A[v] + len(v,w) among edges (v,w) for all v in X and w not in X
